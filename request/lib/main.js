@@ -85,6 +85,7 @@ function request (options, callback) {
         if (options.headers) {
           delete options.headers.host;
         }
+        response.socket.destroy();
         request(options, callback);
         return;
       }
